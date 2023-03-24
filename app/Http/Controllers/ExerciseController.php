@@ -11,8 +11,12 @@ class ExerciseController extends Controller
 {
 
     public function show_home(Request $request) {
-        return redirect('/exercises');
+        return redirect('/dashboard');
     }
+
+    public function show_dashboard(Request $request) {
+        return view('dashboard');
+    }    
 
     public function show_exercises(Request $request) {
         $exercises = Exercise::all();
