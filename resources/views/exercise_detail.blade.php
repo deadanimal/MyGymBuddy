@@ -3,6 +3,34 @@
 @section('content')
 
 <h1>{{$exercise->name}}</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Timestamp</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Repetition</th>
+        <th scope="col">Remark</th>
+      </tr>
+    </thead>
+    <tbody>
+        @forelse($exercise->attempts as $attempts)
+      <tr>
+        <th scope="row">{{$attempt->created_at}}</th>
+        <td>{{$attempt->weight}}</td>
+        <td>{{$attempt->repetition}}</td>
+        <td>{{$attempt->remark}}</td>
+      </tr>
+      @empty
+      <tr>
+        <th scope="row">-</th>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr> 
+      @endforelse
+    </tbody>
+  </table>
+
 
 <form action="/exercise-attempts/" method="POST">
     @csrf
