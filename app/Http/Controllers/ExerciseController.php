@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exercise;
+use App\Models\ExerciseAttempt;
 use Illuminate\Http\Request;
 
 class ExerciseController extends Controller
@@ -40,17 +41,23 @@ class ExerciseController extends Controller
     }   
     
     public function create_exercise_attempt(Request $request) {
-        Exercise::create([
-            'name'=> $request->name
+        ExerciseAttempt::create([
+            'exercise_id'=> $request->exercise_id,
+            'weight'=> $request->weight,
+            'repetition'=> $request->repetition,
+            'remarks'=> $request->remarks,
         ]);
         return back();
     }     
 
     public function update_exercise_attempt(Request $request) {
-        $id = (int) $request->route('exercise_id');          ;
-        $exercise = Exercise::find($id);
+        $id = (int) $request->route('exercise_attempt_id');          ;
+        $exercise = ExerciseAttempt::find($id);
         $exercise->update([
-            'name'=> $request->name
+            'exercise_id'=> $request->exercise_id,
+            'weight'=> $request->weight,
+            'repetition'=> $request->repetition,
+            'remarks'=> $request->remarks,
         ]);
         return back();
     }         

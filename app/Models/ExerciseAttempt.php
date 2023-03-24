@@ -14,4 +14,9 @@ class ExerciseAttempt extends Model
         'weight',
         'repetition',
     ];     
+
+    public function exercise()
+    {
+        return $this->belongsTo(Exercise::class);
+    }           
 }

@@ -12,4 +12,9 @@ class Exercise extends Model
     protected $fillable = [
         'name',        
     ];     
+
+    public function attempts()
+    {
+        return $this->hasMany(ExerciseAttempt::class);
+    }        
 }
