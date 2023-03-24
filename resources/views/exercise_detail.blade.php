@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-        @forelse($exercise->attempts as $attempts)
+        @forelse($exercise->attempts as $attempt)
       <tr>
         <th scope="row">{{$attempt->created_at}}</th>
         <td>{{$attempt->weight}}</td>
