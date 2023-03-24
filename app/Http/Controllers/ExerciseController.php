@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Exercise;
 use App\Models\ExerciseAttempt;
+use App\Models\ExerciseSet;
 use Illuminate\Http\Request;
 
 class ExerciseController extends Controller
@@ -39,6 +40,13 @@ class ExerciseController extends Controller
         ]);
         return back();
     }   
+
+    public function create_exercise_set(Request $request) {
+        ExerciseSet::create([
+            'exercise_id'=> $request->exercise_id,
+        ]);
+        return back();
+    }       
     
     public function create_exercise_attempt(Request $request) {
         ExerciseAttempt::create([
