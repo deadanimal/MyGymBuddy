@@ -9,6 +9,13 @@
   <body>
     <h1>Hello, world!</h1>
     @yield('content')
+
+    @if(Auth::user())
+    <form action="/logout" method="POST">
+        @csrf
+        <button type="submit">Logout</button>
+    </form>
+    @endif
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>
