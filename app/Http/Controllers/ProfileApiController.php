@@ -44,8 +44,7 @@ class ProfileApiController extends Controller
         ], 200);
     }
 
-    public function register(Request $request)    
-    {        
+    public function register(Request $request) {        
         $user = (new CreateNewUser)->create($request->all());             
         return response([
             'message' => 'Registration is successful',
@@ -53,7 +52,7 @@ class ProfileApiController extends Controller
         ])->json($user, 204);    
     }    
 
-    public function logout(Request $request)    {  
+    public function logout(Request $request) {  
         
         $user = $request->user();    
         $user->tokens()->delete(); 

@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+<a href="/exercises">Exercises</a>
 
 <h1>{{$exercise->name}}</h1>
 <table class="table">
