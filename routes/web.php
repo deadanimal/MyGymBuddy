@@ -19,4 +19,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/exercise-attempts', [ExerciseController::class, 'create_exercise_attempt']);
     Route::get('/exercise-attempts/{exercise_attempt_id}', [ExerciseController::class, 'show_exercise_attempt']);
     Route::put('/exercise-attempts/{exercise_attempt_id}', [ExerciseController::class, 'update_exercise_attempt']);
+
+    Route::get('/eats', [EatController::class, 'list_eats']);
+    Route::post('/eats', [EatController::class, 'create_eat']);
+    Route::get('/eats/{eat_id}', [EatController::class, 'detail_eat']);
+    Route::put('/eats/{eat_id}', [EatController::class, 'update_eat']);
+
+    Route::get('/sleeps', [SleepController::class, 'show_sleeps']);
+    Route::post('/sleeps', [SleepController::class, 'create_sleep']);
+    Route::get('/sleeps/{sleep_id}', [SleepController::class, 'show_sleep']);
+    Route::put('/sleeps/{sleep_id}', [SleepController::class, 'update_sleep']);    
+
 });
