@@ -20,13 +20,13 @@ class ExerciseController extends Controller
 
     public function show_exercises(Request $request) {
         $exercises = Exercise::all();
-        return view('exercise_list', compact('exercises'));
+        return view('exercise.list', compact('exercises'));
     }
 
     public function show_exercise(Request $request) {
         $id = (int) $request->route('exercise_id');          ;
         $exercise = Exercise::find($id);
-        return view('exercise_detail', compact('exercise'));
+        return view('exercise.detail', compact('exercise'));
     }    
 
     public function create_exercise(Request $request) {

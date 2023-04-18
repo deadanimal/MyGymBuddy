@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 
 class SleepController extends Controller
 {
-    public function show_sleeps(Request $request) {
+    public function list_sleeps(Request $request) {
         $sleeps = Sleep::all();
-        return view('sleep_list', compact('sleeps'));
+        return view('sleep.list', compact('sleeps'));
     }
 
-    public function show_sleep(Request $request) {
+    public function detail_sleep(Request $request) {
         $id = (int) $request->route('sleep_id');          ;
         $sleep = Sleep::find($id);
-        return view('sleep_detail', compact('sleep'));
+        return view('sleep.detail', compact('sleep'));
     }    
 
     public function create_sleep(Request $request) {
