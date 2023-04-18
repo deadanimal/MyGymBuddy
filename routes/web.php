@@ -18,4 +18,5 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/web/eat.php';
 require __DIR__.'/web/exercise.php';
+require __DIR__.'/web/measurement.php';
 require __DIR__.'/web/sleep.php';
