@@ -16,7 +16,9 @@
 <body class="antialiased">
 
     @include('layouts.navbar')
+    
     @yield('content')
+
     @include('layouts.footer')
 
 </body>
